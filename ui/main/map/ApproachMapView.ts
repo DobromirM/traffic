@@ -18,16 +18,11 @@ import {MapPolygonView} from "@swim/map";
 import {ApproachMapViewController} from "./ApproachMapViewController";
 
 export class ApproachMapView extends MapPolygonView {
-  /** @hidden */
-  _viewController: ApproachMapViewController | null;
+  viewController: ApproachMapViewController | null;
 
   constructor() {
     super();
     this.fill.setState(Color.transparent());
-  }
-
-  get viewController(): ApproachMapViewController | null {
-    return this._viewController;
   }
 
   @MemberAnimator(Color, "inherit")

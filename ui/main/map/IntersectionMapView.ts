@@ -18,12 +18,7 @@ import {MapGraphicView} from "@swim/map";
 import {IntersectionMapViewController} from "./IntersectionMapViewController";
 
 export class IntersectionMapView extends MapGraphicView {
-  /** @hidden */
-  _viewController: IntersectionMapViewController | null;
-
-  get viewController(): IntersectionMapViewController | null {
-    return this._viewController;
-  }
+  viewController: IntersectionMapViewController | null;
 
   @MemberAnimator(Color, "inherit")
   intersectionMarkerColor: MemberAnimator<this, Color, AnyColor>;

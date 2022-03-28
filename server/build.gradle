@@ -33,6 +33,7 @@ repositories {
 dependencies {
   api group: 'org.swimos', name: 'swim-api', version: version
   implementation group: 'org.swimos', name: 'swim-server', version: version
+  implementation group: 'org.swimos', name: 'swim-meta', version: version
 }
 
 afterEvaluate {
@@ -136,7 +137,7 @@ afterEvaluate {
     doLast {
       def bashFile = new File(outputDir, applicationName)
       String bashContent = bashFile.text
-      bashFile.text = bashContent.replaceFirst('APP_HOME_LIBS', Matcher.quoteReplacement('$APP_HOME/lib'))
+      bashFile.text = bashContent.replaceFirst('APP_HOME_LIBS', Matcher.quoteReplacement("\'\$APP_HOME\'/lib"))
 
       def batFile = new File(outputDir, applicationName + ".bat")
       String batContent = batFile.text

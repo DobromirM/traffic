@@ -18,8 +18,7 @@ import {MapGraphicView} from "@swim/map";
 import {TrafficMapViewController} from "./TrafficMapViewController";
 
 export class TrafficMapView extends MapGraphicView {
-  /** @hidden */
-  _viewController: TrafficMapViewController | null;
+  viewController: TrafficMapViewController | null;
 
   constructor() {
     super();
@@ -28,10 +27,6 @@ export class TrafficMapView extends MapGraphicView {
     this.redLightColor.setState(Color.parse("#a50f21"));
     this.yellowLightColor.setState(Color.parse("#fccf20"));
     this.greenLightColor.setState(Color.parse("#54e218"));
-  }
-
-  get viewController(): TrafficMapViewController | null {
-    return this._viewController;
   }
 
   @MemberAnimator(Color)
