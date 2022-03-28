@@ -15,4 +15,4 @@ cp -rf index.html dist ../dist/swim-traffic-3.11.0/ui
 
 cd ../
 
-docker build ./ -f ./java.Dockerfile -t swimdatafabric/traffic:1.0
+docker build ./ -f ./java.Dockerfile -t $1
